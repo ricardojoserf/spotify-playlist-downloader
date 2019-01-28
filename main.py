@@ -12,6 +12,7 @@ def get_args():
 	my_args = parser.parse_args()
 	return my_args
 
+
 def create_dir(dir_name):
 	if not os.path.exists(dir_name):
 		os.makedirs(dir_name)
@@ -27,17 +28,17 @@ def download_songs(spotify_info, dir_name):
 		os.system('cd '+dir_name+' && instantmusic -s "'+wholename+'" -q  > /dev/null 2>&1')
 		print ("%s)\t%s" %(counter, wholename))
 
+		
 def main():
-	aux_playlist_id = sys.argv[2].split(":")
-	playlist_id = aux_playlist_id[len(aux_playlist_id)-1]
-	
 	args = get_args()
 	access_token = args.access_token
 	playlist_id = args.spotiuri.split(":")[len(args.spotiuri.split(":"))-1]
 	dir_name = args.dir_name 
+	
 	result = os.popen('curl -s -X GET "https://api.spotify.com/v1/playlists/'+playlist_id+'/tracks" -H "Authorization: Bearer '+access_token+'"').read()
 	create_dir(dir_name)
 	download_songs(json.loads(result), dir_name)
 
+	
 if __name__ == "__main__":
 	main()
