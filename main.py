@@ -13,6 +13,11 @@ def get_args():
 	return my_args
 
 
+def convert_file(file_path):
+	os.system("ffmpeg -i "+file_path+" -acodec libmp3lame -aq 4 "+file_path+".mp3 > /dev/null 2>&1")
+	print (file_path)
+
+
 def changenames(dir_name):
 	songs = [s for s in os.listdir(dir_name)
 		if os.path.isfile(os.path.join(dir_name, s))]
@@ -22,6 +27,10 @@ def changenames(dir_name):
 		count_song += 1
 		new_s = str(count_song) + " " + s
 		os.rename(os.path.join(dir_name, s), os.path.join(dir_name, new_s))
+		aux_split = new_s.split(".")
+		extension = aux_split[len(aux_split)-1]
+		if extension == "webm":
+			convert_file(os.path.join(dir_name, new_s))
 
 
 def create_dir(dir_name):

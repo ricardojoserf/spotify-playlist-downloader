@@ -28,12 +28,14 @@ python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 Python 2.x:
 
 ```
+sudo apt-get install ffmpeg libavcodec-*
 pip install instantmusic
 ```
 
 Python 3.x:
 
 ```
+sudo apt-get install ffmpeg libavcodec-*
 pip3 install instantmusic
 ```
 
