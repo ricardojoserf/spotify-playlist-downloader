@@ -6,8 +6,13 @@ python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 ```
 
 
+## Example
+
+
 ![Screenshot](images/2.png)
 
+
+Result:
 
 ![Screenshot](images/3.png)
 
@@ -19,11 +24,10 @@ python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 
 - Get the Playlist URI:
 
-
 ![Screenshot](images/1.png)
 
 
-- Install dependencies
+### Dependencies
 
 Python 2.x:
 
