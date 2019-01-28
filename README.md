@@ -5,6 +5,9 @@ Downloading Spotify Playlist
 python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 ```
 
+--------------------------------------------------
+
+
 
 ## Example
 
@@ -17,6 +20,7 @@ Result:
 ![Screenshot](images/3.png)
 
 
+--------------------------------------------------
 
 ## Requirements
 
@@ -26,8 +30,6 @@ Result:
 
 ![Screenshot](images/1.png)
 
-
-### Dependencies
 
 Python 2.x:
 
