@@ -9,6 +9,10 @@ python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 ![Screenshot](images/2.png)
 
 
+![Screenshot](images/3.png)
+
+
+
 ## Requirements
 
 - Get an access token in https://developer.spotify.com/documentation/general/guides/authorization-guide/
