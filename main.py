@@ -7,9 +7,14 @@ import argparse
 def get_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument('-a', '--access_token', required=True, action='store', help='Access token')
-	parser.add_argument('-u', '--spotiuri', required=True, action='store', help='Playlist\'s  Spotify Uri')
+	parser.add_argument('-u', '--spotiuri', action='store', help='Playlist\'s  Spotify Uri')
+	parser.add_argument('-p', '--spotiplaylistId', action='store', help='Playlist\'s  Spotify id')
 	parser.add_argument('-d', '--dir_name', required=True, action='store', help='Directory name')
 	my_args = parser.parse_args()
+
+	if not(my_args.spotiuri or my_args.spotiplaylistId):
+		parser.error('Need URI or ID')
+
 	return my_args
 
 
@@ -52,9 +57,12 @@ def download_songs(spotify_info, dir_name):
 def main():
 	args = get_args()
 	access_token = args.access_token
-	playlist_id = args.spotiuri.split(":")[len(args.spotiuri.split(":"))-1]
-	dir_name = args.dir_name 
-	
+	if args.spotiuri:
+		playlist_id = args.spotiuri.split(":")[len(args.spotiuri.split(":"))-1]
+	if args.spotiplaylistId:
+		playlist_id = args.spotiplaylistId
+	dir_name = args.dir_name
+
 	result = os.popen('curl -s -X GET "https://api.spotify.com/v1/playlists/'+playlist_id+'/tracks" -H "Authorization: Bearer '+access_token+'"').read()
 	create_dir(dir_name)
 	download_songs(json.loads(result), dir_name)
