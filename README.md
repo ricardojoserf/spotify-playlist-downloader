@@ -3,6 +3,8 @@ Downloading Spotify Playlist
 
 ```
 python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
+python main.py -a ACCESS_TOKEN -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
+
 ```
 
 --------------------------------------------------
