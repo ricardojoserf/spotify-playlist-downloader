@@ -45,7 +45,7 @@ def download_songs(spotify_info, dir_name):
 		song_name, song_artist = item["track"]["name"],item["track"]["artists"][0]["name"]
 		wholename = "%s by %s" % (song_name, song_artist)
 		counter += 1
-		os.system('cd '+dir_name+' && instantmusic -s "'+wholename+'" -q  > /dev/null 2>&1')
+		os.system('cd '+dir_name+' && instantmusic -s "'+wholename.encode('utf-8')+'" -q  > /dev/null 2>&1')
 		print ("%s)\t%s" %(counter, wholename))
 
 
