@@ -24,11 +24,34 @@ Result:
 
 ## Requirements
 
-- Get an access token in https://developer.spotify.com/documentation/general/guides/authorization-guide/
+#### Get an access token in https://developer.spotify.com/documentation/general/guides/authorization-guide/
 
-- Get the Playlist URI:
+- Visit and log into: https://developer.spotify.com/dashboard/applications
+
+- Create a "test" application
+
+- Click "Edit settings" and add "https://example.com/callback/" as "Redirect URIs". Save changes
+
+- Copy your "Client ID" value
+
+- Replace "CLIENT_ID" with your own value and visit 
+```
+https://accounts.spotify.com/authorize?client_id=**CLIENT_ID**&redirect_uri=http:%2F%2Fexample.com%2Fcallback&scope=user-read-private%20user-read-email&response_type=token&state=123
+```
+
+- Click "Accept" and extract your access token from the url:
+```
+http://example.com/callback/#access_token=**ACCESS_TOKEN**&token_type=Bearer&expires_in=3600&state=123
+```
+
+
+#### Get the Playlist URI:
 
 ![Screenshot](images/1.png)
+
+
+
+#### Dependencies
 
 
 Python 2.x:
