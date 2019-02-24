@@ -72,6 +72,12 @@ sudo apt-get install ffmpeg libavcodec-*
 pip3 install instantmusic
 ```
 
+## Authors
+
+- @Javisalva9
+
+- @ricardojoserf
+
 ## Note
 
 Tested both in Python2.x (2.7.15rc1) and Python 3.x (3.6.7)
