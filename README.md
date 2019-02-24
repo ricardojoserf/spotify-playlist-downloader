@@ -38,7 +38,7 @@ You can visit the official page (https://developer.spotify.com/documentation/gen
 
 - Replace "CLIENT_ID" with your own value and visit 
 ```
-https://accounts.spotify.com/authorize?client_id=**CLIENT_ID**&redirect_uri=http:%2F%2Fexample.com%2Fcallback/&scope=user-read-private%20user-read-email&response_type=token&state=123
+https://accounts.spotify.com/authorize?client_id=**CLIENT_ID**&redirect_uri=https:%2F%2Fexample.com%2Fcallback/&scope=user-read-private%20user-read-email&response_type=token&state=123
 ```
 
 - Click "Accept" and extract your access token from the url:
