@@ -22,9 +22,11 @@ Result:
 
 --------------------------------------------------
 
-## Requirements
+## Steps / Requirements
 
-#### Get an access token in https://developer.spotify.com/documentation/general/guides/authorization-guide/
+#### 1) Get your own access token 
+
+You can visit the official page (https://developer.spotify.com/documentation/general/guides/authorization-guide/) or follow these instructions:
 
 - Visit and log into: https://developer.spotify.com/dashboard/applications
 
@@ -45,13 +47,13 @@ http://example.com/callback/#access_token=**ACCESS_TOKEN**&token_type=Bearer&exp
 ```
 
 
-#### Get the Playlist URI:
+#### 2) Get the Playlist URI
 
 ![Screenshot](images/1.png)
 
 
 
-#### Dependencies
+#### 3) Install dependencies
 
 
 Python 2.x:
