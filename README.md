@@ -1,5 +1,4 @@
-# spotify-playlist-downloader
-Downloading Spotify Playlist
+# spotify-playlist-downloader - Downloading Spotify Playlists
 
 From Playlist ID:
 ```
@@ -11,14 +10,11 @@ From Playlist URI:
 python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 ```
 
---------------------------------------------------
 
-
-## Examples
-
-### Uri example
+## Example
 
 ![Screenshot](images/2.png)
+
 
 
 Result:
@@ -52,15 +48,17 @@ https://accounts.spotify.com/authorize?client_id=**CLIENT_ID**&redirect_uri=http
 http://example.com/callback/#access_token=**ACCESS_TOKEN**&token_type=Bearer&expires_in=3600&state=123
 ```
 
+
 #### 2.a) Get the Playlist ID if using web client...
 
-![Screenshot](images/2.png)
+![Screenshot](images/4.png)
 
 
 
 #### 2.b) ...or get the Playlist URI if using heavy client
 
 ![Screenshot](images/1.png)
+
 
 
 
@@ -87,7 +85,7 @@ pip3 install instantmusic
 
 - [@Javisalva9](https://github.com/Javisalva9)
 
-- @ricardojoserf
+- [@ricardojoserf](https://github.com/ricardojoserf)
 
 ## Note
 
