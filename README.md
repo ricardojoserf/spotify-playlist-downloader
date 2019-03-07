@@ -1,18 +1,22 @@
 # spotify-playlist-downloader
 Downloading Spotify Playlist
 
+From Playlist ID:
+```
+python main.py -a ACCESS_TOKEN -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
+```
+
+From Playlist URI:
 ```
 python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
-python main.py -a ACCESS_TOKEN -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
-
 ```
 
 --------------------------------------------------
 
 
+## Examples
 
-## Example
-
+### Uri example
 
 ![Screenshot](images/2.png)
 
@@ -48,8 +52,13 @@ https://accounts.spotify.com/authorize?client_id=**CLIENT_ID**&redirect_uri=http
 http://example.com/callback/#access_token=**ACCESS_TOKEN**&token_type=Bearer&expires_in=3600&state=123
 ```
 
+#### 2.a) Get the Playlist ID if using web client...
 
-#### 2) Get the Playlist URI
+![Screenshot](images/2.png)
+
+
+
+#### 2.b) ...or get the Playlist URI if using heavy client
 
 ![Screenshot](images/1.png)
 
@@ -72,9 +81,11 @@ sudo apt-get install ffmpeg libavcodec-*
 pip3 install instantmusic
 ```
 
+-----------------------------
+
 ## Authors
 
-- @Javisalva9
+- [@Javisalva9](https://github.com/Javisalva9)
 
 - @ricardojoserf
 
