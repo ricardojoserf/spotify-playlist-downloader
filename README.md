@@ -13,13 +13,13 @@ python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 
 ## Example
 
-![Screenshot](images/2.png)
+![Screenshot](https://i.imgur.com/bhLmsh8.png)
 
 
 
 Result:
 
-![Screenshot](images/3.png)
+![Screenshot](https://i.imgur.com/EzNTbPx.png)
 
 
 --------------------------------------------------
@@ -51,13 +51,13 @@ http://example.com/callback/#access_token=**ACCESS_TOKEN**&token_type=Bearer&exp
 
 #### 2.a) Get the Playlist ID if using web client...
 
-![Screenshot](images/4.png)
+![Screenshot](https://i.imgur.com/70VDD4K.png)
 
 
 
 #### 2.b) ...or get the Playlist URI if using heavy client
 
-![Screenshot](images/1.png)
+![Screenshot](https://i.imgur.com/YliDKpR.png)
 
 
 
