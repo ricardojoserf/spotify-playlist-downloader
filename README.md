@@ -2,12 +2,12 @@
 
 From Playlist ID:
 ```
-python main.py -a ACCESS_TOKEN -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
+python main.py -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
 ```
 
 From Playlist URI:
 ```
-python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
+python main.py -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 ```
 
 
@@ -32,6 +32,7 @@ You can visit the official page (https://developer.spotify.com/documentation/gen
 
 - Visit and log into: https://developer.spotify.com/dashboard/applications
 
+Set your CLIENT_ID and SECRET_ID in the `config.py` file, see the [example](https://github.com/chess-seventh/spotify-playlist-downloader/blob/master/config.example.py).
 
 
 #### 2.a) Get the Playlist ID if using web client...
@@ -50,18 +51,12 @@ You can visit the official page (https://developer.spotify.com/documentation/gen
 #### 3) Install dependencies
 
 
-Python 2.x:
-
-```
-sudo apt-get install ffmpeg libavcodec-*
-pip install instantmusic
-```
+Works better with Python 3.5+
 
 Python 3.x:
 
 ```
-sudo apt-get install ffmpeg libavcodec-*
-pip3 install instantmusic
+pip3 install -r requirements.txt
 ```
 
 -----------------------------
@@ -71,6 +66,8 @@ pip3 install instantmusic
 - [@Javisalva9](https://github.com/Javisalva9)
 
 - [@ricardojoserf](https://github.com/ricardojoserf)
+
+- [@chess7th](https://github.com/chess-seventh)
 
 ## Note
 

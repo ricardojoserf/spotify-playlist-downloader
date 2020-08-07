@@ -9,7 +9,6 @@ eyeD3==0.9.5
 filetype==1.0.7
 greenlet==0.4.16
 idna==2.10
-instantmusic==2.2
 mutagen==1.45.1
 packaging==20.4
 Pygments==2.6.1
