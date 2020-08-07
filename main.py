@@ -7,6 +7,8 @@ import json
 import argparse
 from youtubesearchpython import SearchVideos
 import youtube_dl
+from youtube_dl.utils import DownloadError
+from youtube_dl.utils import ExtractorError
 import spotipy
 from config import CLIENT_ID
 from config import CLIENT_SECRET
@@ -21,7 +23,7 @@ def get_args():
                         help='Playlist\'s  Spotify Uri')
     parser.add_argument('-p', '--spotiplaylistId', action='store',
                         help='Playlist\'s  Spotify id')
-    parser.add_argument('-d', '--dir_name', required=True, action='store',
+    parser.add_argument('-d', '--dir_name', required=False, action='store',
                         help='Directory name')
     my_args = parser.parse_args()
 
@@ -33,7 +35,7 @@ def get_args():
 
 def changenames(dir_name):
     """
-    Fix names of downloaded music.
+    Fix names of downloaded music and move them to output directory.
     """
     songs = [i for i in [s for s in os.listdir("./")
                          if os.path.isfile(os.path.join("./", s))]
@@ -70,7 +72,9 @@ def download_songs(spotify_info):
         print("%s)\t%s" % (counter, wholename))
         track = get_yt_link(song_artist, song_name)
         if track:
-            yt_dl(track)
+            if not yt_dl(track):
+                print(f"This track failed: {wholename}")
+                failed.append(f"{song_artist} {song_name}")
         else:
             print(f"This track failed: {wholename}")
             failed.append(f"{song_artist} {song_name}")
@@ -84,25 +88,40 @@ def yt_dl(vid):
     ydl_opts = {
         'format': 'bestaudio/best',
         'quiet': 'True',
+        'no-playlist': 'True',
+        'audio-format': 'best',
+        'extract-audio': 'True',
         'addmetadata': 'True',
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
-            'preferredquality': '320',
+            'preferredquality': '320'
         }]}
+
     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
-        ydl.download([vid])
+        try:
+            ydl.download([vid])
+        except DownloadError as dl_e:
+            print(f"Couldn't download: {dl_e}")
+            return False
+        except ExtractorError as extract_e:
+            print(f"Couldn't extract: {extract_e}")
+            return False
+        return True
 
 
 def get_yt_link(artist, song):
     """
-    Returns YT Link to download
+    Return YT Link to download
     """
     search = SearchVideos(str(artist + " " + song),
                           offset=1,
                           mode="json",
                           max_results=1)
-    return search.links[0]
+    try:
+        return search.links[0]
+    except IndexError as e:
+        print(f"No videos to download found: {e}")
 
 
 def main():
@@ -110,14 +129,16 @@ def main():
     main function
     """
     args = get_args()
-    dir_name = 'output'
+    dir_name = args.dir_name
 
     if args.spotiuri:
         playlist_id = args.spotiuri.split(":")[len(args.spotiuri.split(":"))-1]
 
     if args.spotiplaylistId:
         playlist_id = args.spotiplaylistId
-        dir_name = args.dir_name
+
+    if not dir_name:
+        dir_name = 'output'
 
     tok = spotipy.oauth2.SpotifyClientCredentials(client_id=CLIENT_ID,
                                                   client_secret=CLIENT_SECRET)
