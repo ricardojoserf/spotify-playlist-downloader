@@ -2,19 +2,18 @@
 
 From Playlist ID:
 ```
-python main.py -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
+python main.py -p PLAYLIST_SPOTIFY_ID -d OUTPUT_DIRECTORY
 ```
 
 From Playlist URI:
 ```
-python main.py -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
+python main.py -u PLAYLIST_SPOTIFY_URI -d OUTPUT_DIRECTORY
 ```
 
 
 ## Example
 
-![Screenshot](https://i.imgur.com/bhLmsh8.png)
-
+![Screenshot](https://i.imgur.com/xnVSh7b.jpg)
 
 
 Result:
@@ -24,7 +23,7 @@ Result:
 
 --------------------------------------------------
 
-## Steps / Requirements
+## Steps & Requirements
 
 #### 1) Get your own CLIENT_ID and SECRET_ID
 
@@ -32,13 +31,14 @@ You can visit the official page (https://developer.spotify.com/documentation/gen
 
 - Visit and log into: https://developer.spotify.com/dashboard/applications
 
-Set your CLIENT_ID and SECRET_ID in the `config.py` file, see the [example](https://github.com/chess-seventh/spotify-playlist-downloader/blob/master/config.example.py).
+- Create a test application and get the "Client ID" and "Client Secret" values
+
+- Set your CLIENT_ID and SECRET_ID in the `config.py` file, see the [example](https://github.com/chess-seventh/spotify-playlist-downloader/blob/master/config.example.py).
 
 
 #### 2.a) Get the Playlist ID if using web client...
 
 ![Screenshot](https://i.imgur.com/70VDD4K.png)
-
 
 
 #### 2.b) ...or get the Playlist URI if using heavy client
@@ -47,15 +47,11 @@ Set your CLIENT_ID and SECRET_ID in the `config.py` file, see the [example](http
 
 
 
-
 #### 3) Install dependencies
 
-
-Works better with Python 3.5+
-
-Python 3.x:
-
 ```
+apt install ffmpeg
+
 pip3 install -r requirements.txt
 ```
 
@@ -69,6 +65,7 @@ pip3 install -r requirements.txt
 
 - [@chess7th](https://github.com/chess-seventh)
 
+
 ## Note
 
-Tested both in Python2.x (2.7.15rc1) and Python 3.x (3.6.7)
+Tested both in Python2.x (2.7.15rc1) and Python 3.x (3.6.7). It works better with Python 3.5+.
