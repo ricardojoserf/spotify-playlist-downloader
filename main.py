@@ -9,7 +9,6 @@ import youtube_dl
 import spotipy
 from youtubesearchpython import SearchVideos
 from youtube_dl.utils import DownloadError, ExtractorError
-from config import CLIENT_ID, CLIENT_SECRET
 
 
 def get_args():
@@ -19,6 +18,8 @@ def get_args():
     parser = argparse.ArgumentParser()
     parser.add_argument('-u', '--spotiuri', action='store', help='Playlist\'s  Spotify Uri')
     parser.add_argument('-p', '--spotiplaylistId', action='store', help='Playlist\'s  Spotify id')
+    parser.add_argument('-i', '--client_id', required=True, action='store', help='Client\'s id')
+    parser.add_argument('-s', '--client_secret', required=True, action='store', help='Client\'s secret')
     parser.add_argument('-d', '--dir_name', required=False, action='store', default="spotify_playlist", help='Directory name')
     my_args = parser.parse_args()
 
@@ -115,8 +116,8 @@ def main():
     if args.spotiplaylistId:
         playlist_id = args.spotiplaylistId
 
-    tok = spotipy.oauth2.SpotifyClientCredentials(client_id=CLIENT_ID,
-                                                  client_secret=CLIENT_SECRET)
+    tok = spotipy.oauth2.SpotifyClientCredentials(client_id=args.client_id,
+                                                  client_secret=args.client_secret)
 
     access_token = tok.get_access_token(as_dict=False)
 

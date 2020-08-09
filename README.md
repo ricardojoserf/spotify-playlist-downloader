@@ -2,18 +2,18 @@
 
 From Playlist ID:
 ```
-python main.py -p PLAYLIST_SPOTIFY_ID -d OUTPUT_DIRECTORY
+python3 main.py -p PLAYLIST_SPOTIFY_ID -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
 ```
 
 From Playlist URI:
 ```
-python main.py -u PLAYLIST_SPOTIFY_URI -d OUTPUT_DIRECTORY
+python3 main.py -u PLAYLIST_SPOTIFY_URI -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
 ```
 
 
 ## Example
 
-![Screenshot](https://i.imgur.com/xnVSh7b.jpg)
+![Screenshot](https://i.imgur.com/6DyO0Tz.jpg)
 
 
 Result:
@@ -31,9 +31,7 @@ You can visit the official page (https://developer.spotify.com/documentation/gen
 
 - Visit and log into: https://developer.spotify.com/dashboard/applications
 
-- Create a test application and get the "Client ID" and "Client Secret" values
-
-- Set your CLIENT_ID and SECRET_ID in the `config.py` file, see the [example](https://github.com/chess-seventh/spotify-playlist-downloader/blob/master/config.example.py).
+- Create a test application and get the "Client ID" and "Client Secret" values. Use them with the paramaters "-i" and "-s"
 
 
 #### 2.a) Get the Playlist ID if using web client...
@@ -68,4 +66,4 @@ pip3 install -r requirements.txt
 
 ## Note
 
-Tested both in Python2.x (2.7.15rc1) and Python 3.x (3.6.7). It works better with Python 3.5+.
+Only working with Python 3.x (tested using 3.8.1).
