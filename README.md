@@ -2,12 +2,12 @@
 
 From Playlist ID:
 ```
-python main.py -a ACCESS_TOKEN -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
+python main.py -p PLAYLIST_SPOTIFY_ID -d DIRECTORY
 ```
 
 From Playlist URI:
 ```
-python main.py -a ACCESS_TOKEN -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
+python main.py -u PLAYLIST_SPOTIFY_URI -d DIRECTORY
 ```
 
 
@@ -26,27 +26,13 @@ Result:
 
 ## Steps / Requirements
 
-#### 1) Get your own access token 
+#### 1) Get your own CLIENT_ID and SECRET_ID
 
 You can visit the official page (https://developer.spotify.com/documentation/general/guides/authorization-guide/) or follow these instructions:
 
 - Visit and log into: https://developer.spotify.com/dashboard/applications
 
-- Create a "test" application
-
-- Click "Edit settings" and add "https://example.com/callback/" as "Redirect URIs". Save changes
-
-- Copy your "Client ID" value
-
-- Replace "CLIENT_ID" with your own value and visit 
-```
-https://accounts.spotify.com/authorize?client_id=**CLIENT_ID**&redirect_uri=https:%2F%2Fexample.com%2Fcallback/&scope=user-read-private%20user-read-email&response_type=token&state=123
-```
-
-- Click "Accept" and extract your access token from the url:
-```
-http://example.com/callback/#access_token=**ACCESS_TOKEN**&token_type=Bearer&expires_in=3600&state=123
-```
+Set your CLIENT_ID and SECRET_ID in the `config.py` file, see the [example](https://github.com/chess-seventh/spotify-playlist-downloader/blob/master/config.example.py).
 
 
 #### 2.a) Get the Playlist ID if using web client...
@@ -65,18 +51,12 @@ http://example.com/callback/#access_token=**ACCESS_TOKEN**&token_type=Bearer&exp
 #### 3) Install dependencies
 
 
-Python 2.x:
-
-```
-sudo apt-get install ffmpeg libavcodec-*
-pip install instantmusic
-```
+Works better with Python 3.5+
 
 Python 3.x:
 
 ```
-sudo apt-get install ffmpeg libavcodec-*
-pip3 install instantmusic
+pip3 install -r requirements.txt
 ```
 
 -----------------------------
@@ -86,6 +66,8 @@ pip3 install instantmusic
 - [@Javisalva9](https://github.com/Javisalva9)
 
 - [@ricardojoserf](https://github.com/ricardojoserf)
+
+- [@chess7th](https://github.com/chess-seventh)
 
 ## Note
 
