@@ -5,13 +5,19 @@ From Playlist ID:
 python3 main.py -p PLAYLIST_SPOTIFY_ID -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
 ```
 
+**Ex.**: python3 main.py -p 0AFu117j8WX2auNWDAyMMV -i $CLIENT_ID -s $CLIENT_SECRET -d results2
+
 From Playlist URI:
 ```
 python3 main.py -u PLAYLIST_SPOTIFY_URI -i CLIENT_ID -s CLIENT_SECRET [-d OUTPUT_DIRECTORY]
 ```
 
+**Ex.**: python3 main.py -u spotify:playlist:0AFu117j8WX2auNWDAyMMV -i $CLIENT_ID -s $CLIENT_SECRET -d results1
 
-## Example
+--------------------------------------------------
+
+
+## Results example
 
 ![Screenshot](https://i.imgur.com/6DyO0Tz.jpg)
 
@@ -22,6 +28,7 @@ Result:
 
 
 --------------------------------------------------
+
 
 ## Steps & Requirements
 
@@ -42,7 +49,6 @@ You can visit the official page (https://developer.spotify.com/documentation/gen
 #### 2.b) ...or get the Playlist URI if using heavy client
 
 ![Screenshot](https://i.imgur.com/YliDKpR.png)
-
 
 
 #### 3) Install dependencies
