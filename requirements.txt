@@ -11,7 +11,7 @@ greenlet==0.4.16
 idna==2.10
 mutagen==1.45.1
 packaging==20.4
-Pygments==2.7.4
+Pygments==2.15.0
 pyparsing==2.4.7
 requests==2.31.0
 six==1.15.0
