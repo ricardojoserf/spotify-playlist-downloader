@@ -8,7 +8,7 @@ deprecation==2.1.0
 eyeD3==0.9.5
 filetype==1.0.7
 greenlet==0.4.16
-idna==2.10
+idna==3.7
 mutagen==1.45.1
 packaging==20.4
 Pygments==2.15.0
