@@ -16,7 +16,7 @@ pyparsing==2.4.7
 requests==2.32.2
 six==1.15.0
 soupsieve==2.0.1
-spotipy==2.22.1
+spotipy==2.25.1
 urllib3==1.26.19
 wcwidth==0.2.5
 youtube-dl==2020.7.28
