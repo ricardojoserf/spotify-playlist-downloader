@@ -13,7 +13,7 @@ mutagen==1.45.1
 packaging==20.4
 Pygments==2.20.0
 pyparsing==2.4.7
-requests==2.32.4
+requests==2.33.0
 six==1.15.0
 soupsieve==2.8.4
 spotipy==2.25.1
