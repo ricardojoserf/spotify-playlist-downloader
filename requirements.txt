@@ -15,7 +15,7 @@ Pygments==2.20.0
 pyparsing==2.4.7
 requests==2.33.0
 six==1.15.0
-soupsieve==2.8.4
+soupsieve==2.9
 spotipy==2.25.1
 urllib3==2.8.0
 wcwidth==0.2.5
